@@ -1,0 +1,55 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="libs/json/json2.js"></script>
+        <script src="libs/jquery-1.10.2.min.js"></script>
+        <script src="libs/underscore-min.js"></script>
+        <script src="libs/backbone.js"></script>
+        <script src="libs/Backbone.CrossDomain/Backbone.CrossDomain.js"></script>
+        <script src="js/model.js"></script>
+        <script src="js/routes.js"></script>
+        <script src="js/collections.js"></script>
+        <script>
+            $(document).ready()
+            {
+                var venues = new VenueCollection;
+                venues.fetch();
+                salida = "";
+                $.each(venues, function(i, venue)
+                {
+                    aux = "<li>" + venue.nombre + "</li>";
+                    alert(aux);
+                    salida = salida + aux;
+                });
+
+                salida = "<ul>" + salida + "</ul>";
+                $("#ListaLocales").html(salida);
+
+            }
+            ;
+        </script>
+    </head>
+    <body>
+        <div data-role="page" id="index">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h3>
+                    Header
+                </h3>
+            </div>
+            <div data-role="content">
+                <h2>
+                    Carte
+                </h2>
+                <div id="ListaLocales">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
