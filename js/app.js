@@ -9,8 +9,12 @@ function actionStart()
 }
 
 function actionVenues() {
-    datos = getVenues();
-    showVenues(datos);
+    salida = getVenues();
+    console.log(salida);
+    //alert(datos.resultado[0].id);
+    //console.log(datos);
+    //showVenues(salida);
+    //$('#venuelist').html(salida);
     events();
     $.mobile.changePage("#venues", {transition: "none"});
 
@@ -39,4 +43,6 @@ function events()
         e.preventDefault();
         route(link);
     });
+    $('#ulvenues').listview();
+    $('#ulvenues').listview('refresh');
 }
