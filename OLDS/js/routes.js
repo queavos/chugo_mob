@@ -4,25 +4,27 @@
  */
 function route(link)
 {
+    //enlace = link.split('#');
     str = link.split('/');
-    //alert(str);
+    //alert(str[0]);
     switch (str[0]) {
-        case '#Home':
+        case 'Home':
             actionHome();
             break;
-        case '#venues':
+        case 'venues':
+            //
             actionVenues();
             break;
-        case '#venue':
-            actionVenue(id);
+        case 'venue':
+            actionVenue(str[1]);
             break;
-        case '#carte':
+        case 'carte':
             actionCarte(id);
             break;
-        case '#login':
+        case 'login':
             actionLogin(id);
             break;
-        case '#locate':
+        case 'locate':
             actionLocate(id);
             break;
         default:

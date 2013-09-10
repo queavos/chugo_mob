@@ -10,16 +10,12 @@ function actionStart()
 
 function actionVenues() {
     salida = getVenues();
-    console.log(salida);
-    //alert(datos.resultado[0].id);
-    //console.log(datos);
-    //showVenues(salida);
-    //$('#venuelist').html(salida);
     events();
     $.mobile.changePage("#venues", {transition: "none"});
 
 }
 function actionVenue(datos) {
+    alert('aca llego');
 }
 function actionCarte(datos) {
 }
@@ -34,12 +30,13 @@ function actionHome() {
     $('#homeContent').html(salida);
     events();
     $.mobile.changePage("#home", {transition: "none"});
+    //$('ul').listview('refresh');
 }
 function events()
 {
-    $('a').click(function(e)
+    $('.link').click(function(e)
     {
-        var link = $(this).attr('href');
+        var link = $(this).attr('data-href');
         e.preventDefault();
         route(link);
     });

@@ -4,4 +4,3 @@
  */
 var dir_remota = "http://127.0.0.1/chugo.dev/public/";
 var result = [];
-
