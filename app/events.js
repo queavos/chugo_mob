@@ -34,13 +34,20 @@ function initBinding() {
         getVenues();
         event.preventDefault();
     });
+
     /*  Link to Carte    */
 
     /*  Link to Item of Carte    */
+    $('#ubicar').on("pageshow", function() {
+
+        $('#map_canvas').gmap('refresh');
+    });
+    $('#ubicar').on("pageinit", function() {
+
+        $('#map_canvas').gmap({'center': '59.3426606750, 18.0736160278'});
+    });
 
 
 
 
 }
-
-

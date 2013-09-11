@@ -15,4 +15,16 @@ root {
     display: inline;
     position: relative;
 }
+#map_canvas
+{
+    position: fixed;
+    top:10px;
+    left: 20px;
+    right: 20px;
+    min-width: 180px;
+    max-width: 400px;
+    min-height: 180px;
+    height: 280px;
+    max-height: 400px;
+}
 

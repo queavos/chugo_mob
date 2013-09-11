@@ -3,10 +3,12 @@
  * and open the template in the editor.
  */
 function showHome() {
-    //$.mobile.loading('show', {theme: 'a'});
+    $.mobile.loading('show', {theme: 'a'});
     $.mobile.changePage("#venues", {transition: "none"});
     salida = "<h3>Bienvenido</h3>";
-    salida = salida + "<a data-href='venues' href = '#' class = 'linktovenues' data-role='button' > Buscar </a>";
+    salida = salida + "<a data-href='venues' href = '#' class = 'linktovenues' data-role='button' > Buscar </a> ";
+    salida = salida + "<a href='map.html' > Map </a>";
+    //console.log(salida);
     $('#homecontent').html(salida);
     $.mobile.loading('hide');
     initBinding();
@@ -20,6 +22,7 @@ function showVenues(datos) {
     $('#venuescontent').html(datos.count + ' Encontrados...');
     $('#venuelist').html(salida);
     $('#venuelist').listview('refresh', 'splitIcon');
+    $.mobile.loading('hide');
     initBinding();
 }
 
@@ -31,7 +34,9 @@ function showVenue(datos) {
     salida = Mustache.to_html(views.venue, datos, views.venue_contacts);
     //alert(salida);
     $('#contentvenue').html(salida);
+    $.mobile.loading('hide');
     initBinding();
+    $('.linktocarte').button();
 }
 
 function showCarte(datos) {
@@ -45,8 +50,8 @@ function showCarte(datos) {
     $('#contentcarte').html(salida);
     initBinding();
     $('.cartelist').listview();
-
+    $.mobile.loading('hide');
 }
-function showItems(datos) {
+function showItem(datos) {
 }
 

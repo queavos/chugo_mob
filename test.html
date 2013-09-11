@@ -7,21 +7,27 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
         <script src="libs/jq/jquery-1.10.2.min.js"></script>
         <script src="libs/jqm/jquery.mobile-1.3.2.min.js"></script>
-        <script src="libs/mustache/mustache.js"></script>
-        <script src="app/conf.js"></script>
-        <script src="app/views.js"></script>
-        <script src="app/requests.js"></script>
-        <script src="app/shows.js"></script>
-        <script src="app/events.js"></script>
+        <script src="http://www.pittss.lv/jquery/gomap/js/jquery.gomap-1.3.2.min.js"></script>
         <script>
             $(document).ready()
             {
-                getVenues();
+                $("#map").goMap({
+                    latitude: 56.948813,
+                    longitude: 24.104004,
+                    zoom: 6
+                });
             }
-            ;
+
         </script>
+        <style> 
+            #map { 
+                width:250px; 
+                height:250px; 
+            } 
+        </style>    
     </head>
     <body>
         <div data-role="page" id="index">
@@ -31,11 +37,13 @@ and open the template in the editor.
                 </h3>
             </div>
             <div  data-role="content">
+                <span id="msg">Mensaje</span>
                 <h2>
-                    Carte
+                    Mapa
                 </h2>
-                <div id="venuescontent"></div>
-                <ul id="venuelist" ></ul>
+                <div id="map">
+                    soy mapa
+                </div>
 
 
             </div>
