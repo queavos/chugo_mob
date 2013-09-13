@@ -48,4 +48,19 @@ function getCarte(id) {
     });
 }
 function getItem(id) {
+    url = dir_remota + "api/v1/item/" + id;
+    var lista = [];
+    $.ajax({
+        async: false,
+        dataType: "jsonp",
+        data: "",
+        url: url,
+        crossdomain: true,
+        success: function(data) {
+            last_item = data['result'][0];
+            showItem(data);
+
+            //console.log(last_item);
+        }
+    });
 }

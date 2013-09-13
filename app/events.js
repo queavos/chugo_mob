@@ -14,6 +14,7 @@
  
  }*/
 function initBinding() {
+    $(".boton").button();
     /*  Link to Venue    */
     $(".linktovenues").click(function(event) {
         getVenues();
@@ -31,7 +32,14 @@ function initBinding() {
         event.preventDefault();
     });
     $(".linktoitem").click(function(event) {
-        getVenues();
+        currentId = $(this).attr('data-item');
+        getItem(currentId);
+        event.preventDefault();
+    });
+    $(".additem").click(function(event) {
+        //currentId = $(this).attr('data-item');
+        //getItem(currentId);
+        showAddItem();
         event.preventDefault();
     });
 

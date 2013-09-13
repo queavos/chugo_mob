@@ -46,12 +46,34 @@ function showCarte(datos) {
     views = new Views();
     salida = Mustache.to_html(views.carte, datos, views.carte_item);
     //alert(salida);
-    console.log(salida);
+    // console.log(salida);
     $('#contentcarte').html(salida);
     initBinding();
     $('.cartelist').listview();
     $.mobile.loading('hide');
 }
 function showItem(datos) {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#item", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.items, datos);
+    //console.log(salida);
+    $('#contentitem').html(salida);
+    initBinding();
+    //$('.cartelist').listview();
+    $.mobile.loading('hide');
+}
+function showAddItem() {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#addcart", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.additem, last_item);
+    console.log(last_item);
+    $('#contentaddcart').html(salida);
+    initBinding();
+    //$('.cartelist').listview();
+    $.mobile.loading('hide');
 }
 
