@@ -43,11 +43,46 @@ function initBinding() {
         $('#map_canvas').gmap('refresh');
     });
     $('#ubicar').on("pageinit", function() {
+        mapa = $('#map_canvas');
+        var pos = new google.maps.LatLng(lat, lng);
+        mapa.gmap({'center': pos, 'zoom': 15, 'disableDefaultUI': true, });
+        mapa.gmap('addMarker', {'tags': 'foo', 'position': pos})
+        //console.log(mapa);
 
-        $('#map_canvas').gmap({'center': '59.3426606750, 18.0736160278'});
     });
 
 
 
+
+}
+function getLocation()
+{
+    if (navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(initPosition);
+    }
+    else {
+        //x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function initPosition(position)
+{
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
+}
+function watchLocation() {
+
+    if (navigator.geolocation)
+    {
+        navigator.geolocation.watchPosition(updatePosition);
+    }
+    else {
+        //x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+function updatePosition(position)
+{
+    lat = position.coords.latitude;
+    lng = position.coords.longitude;
 
 }

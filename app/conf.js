@@ -4,3 +4,4 @@
  */
 var dir_remota = "http://192.168.1.102/chugo.dev/public/";
 var result = [];
+var mapa, mypos, lat, lng, plat, plng;
