@@ -41,6 +41,11 @@ function Views() {
             "<p><label class='ui-hidden-accessible'>Precio:</label>{{price}}</p>" +
             "<p><label class='ui-hidden-accessible'>Cantidad</label><input type='number' name='cantidad' id='txtqnty' value='1'  /></p>" +
             "<p><a href='#' data-theme='a' data-role='button' class='addConfirm boton' >Confirmar</a><a href='#' data-rel='back' data-theme='a' data-role='button' class='boton' >Cancelar</a></p>";
-
+    this.cart = "<div class='ui-grid-d'>" +
+            "<div class = 'ui-block-a' > Nombre </div><div class='ui-block-b'>Cant.</div > <div class = 'ui-block-c' > Precio </div><div class='ui-block-d'>SubTotal</div >" +
+            "<div class = 'ui-block-e' > Borrar </div>" +
+            "{{#items}}{{>items}}{{/items}}" +
+            "<div class='ui-block-a'> </div><div class='ui-block-b'>TOTAL</div><div class='ui-block-c'></div><div class='ui-block-d'>{{sumtotal}}</div><div class='ui-block-e'></div></div></div>";
+    this.cart_item = {items: "<div class='ui-block-a'>{{name}}</div><div class='ui-block-b'>{{qnty}}</div><div class='ui-block-c'>{{price}}</div><div class='ui-block-d'>{{total}}</div><div class='ui-block-e'><a href='#' data-icon='delete' data-iconpos='notext' data-itemid='{{id}}' data-mini='true' class='delitemcart boton'>Borrar</a></div>"};
 }
 

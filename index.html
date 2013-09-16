@@ -42,7 +42,8 @@
                 <h3>Bienvenido</h3>
 
                 <a data-href='#' href = '#' class = 'linktovenues' data-role='button' > Buscar </a>
-                <a href='#ubicar' data-role='button' class = 'linktolocate' > Localizarme </a>
+                <a href='#' data-role='button' class = 'linktolocate' > Localizarme </a>
+                <a href='#' data-role='button' class = 'linktocart' > Ver Pedido </a>
             </div>
         </div>
 
@@ -128,6 +129,21 @@
 
             </div>
         </div>
+
+        <!-- MOSTRAR CARRITO -->
+
+        <div data-role="page" id="cart" data-theme='a'>
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <a href="#index" data-icon="home" data-iconpos="notext">Inicio</a>
+                <h3>
+                    Su Pedido
+                </h3>
+            </div>
+            <div data-role="content" id="contentcart">
+
+            </div>
+        </div>
+
         <script>
             $(document).ready()
             {

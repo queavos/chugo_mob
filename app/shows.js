@@ -70,8 +70,21 @@ function showAddItem() {
     salida = '';
     views = new Views();
     salida = Mustache.to_html(views.additem, last_item);
-    console.log(last_item);
+    //console.log(last_item);
     $('#contentaddcart').html(salida);
+    initBinding();
+    //$('.cartelist').listview();
+    $("#txtqnty").val(1);
+    $.mobile.loading('hide');
+}
+function showCart() {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#cart", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.cart, pedido, views.cart_item);
+    //console.log(last_item);
+    $('#contentcart').html(salida);
     initBinding();
     //$('.cartelist').listview();
     $("#txtqnty").val(1);

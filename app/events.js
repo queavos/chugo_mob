@@ -36,11 +36,31 @@ function initBinding() {
         getItem(currentId);
         event.preventDefault();
     });
+    $(".linktocart").click(function(event) {
+        //currentId = $(this).attr('data-item');
+        //getItem(currentId);
+        showCart();
+        event.preventDefault();
+    });
     $(".additem").click(function(event) {
         //currentId = $(this).attr('data-item');
         //getItem(currentId);
         showAddItem();
         event.preventDefault();
+    });
+
+    $(".delitemcart").click(function(event) {
+        currentId = $(this).attr('data-itemid');
+        //getItem(currentId);
+        //showAddItem();
+        event.preventDefault();
+        var diag = confirm("El producto se eliminara de su pedido. ¿Desea continuar?");
+        if (diag == true)
+        {
+            pedido.delItem(currentId);
+            showCart();
+        }
+
     });
     $(".addConfirm").click(function(event) {
         //currentId = $(this).attr('data-item');
@@ -77,8 +97,10 @@ function initBinding() {
                 pedido.venue = last_item['venue_id'];
                 pedido.userid = 0;
             }
+            //alert("llego a check");
             var check = pedido.findItem(last_item['id'])
-            if (check != 0) {
+            console.log("check=" + check);
+            if (check != -1) {
                 var diag = confirm("Este producto suplantara a un producto igual ya existente, " +
                         " ¿Desea continuar?");
                 if (diag == true)
@@ -93,8 +115,10 @@ function initBinding() {
                     return;
                 }
             }
+
             pedido.addItem(last_item, qnty);
-            alert("El producto fue agregado");
+            alert("El producto fue agregado\n\
+el monto total de su Compra es " + pedido.sumtotal);
             window.history.back();
             console.log(pedido);
         }
