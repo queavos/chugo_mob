@@ -42,6 +42,63 @@ function initBinding() {
         showAddItem();
         event.preventDefault();
     });
+    $(".addConfirm").click(function(event) {
+        //currentId = $(this).attr('data-item');
+        //getItem(currentId);
+        //showAddItem();
+        var qnty = $("#txtqnty").val();
+        event.preventDefault();
+        if (!isNaN(qnty))
+        {
+            qnty = Math.abs(qnty);
+
+            if ((pedido.venue != 0) && (pedido.venue != last_item['venue_id']))
+            {
+                var diag = confirm("El Local de su pedido actual, " +
+                        " no se corresponde con el del nuevo producto que desea agregar." +
+                        " ¿Desea eliminar el pedido actual e iniciar uno que corresponda al Local   Del Nuevo Producto?");
+                if (diag == true)
+                {
+                    pedido = new Cart;
+
+                }
+                else
+                {
+                    alert("El producto NO fue agregado");
+                    window.history.back();
+                    return;
+                }
+
+            }
+            if (pedido.venue == 0)
+            {
+                pedido.lat = plat;
+                pedido.lng = plng;
+                pedido.venue = last_item['venue_id'];
+                pedido.userid = 0;
+            }
+            var check = pedido.findItem(last_item['id'])
+            if (check != 0) {
+                var diag = confirm("Este producto suplantara a un producto igual ya existente, " +
+                        " ¿Desea continuar?");
+                if (diag == true)
+                {
+                    //pedido = new Cart;
+                    pedido.delItem(check);
+                }
+                else
+                {
+                    alert("El producto NO fue agregado");
+                    window.history.back();
+                    return;
+                }
+            }
+            pedido.addItem(last_item, qnty);
+            alert("El producto fue agregado");
+            window.history.back();
+            console.log(pedido);
+        }
+    });
 
     /*  Link to Carte    */
 

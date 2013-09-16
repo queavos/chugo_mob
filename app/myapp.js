@@ -6,3 +6,8 @@ var result = [];
 var last_item;
 var mapa, mypos, lat, lng, plat, plng;
 var pedido = new Cart();
+
+/*
+ FUNCIONES
+ */
+

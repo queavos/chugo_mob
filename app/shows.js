@@ -74,6 +74,7 @@ function showAddItem() {
     $('#contentaddcart').html(salida);
     initBinding();
     //$('.cartelist').listview();
+    $("#txtqnty").val(1);
     $.mobile.loading('hide');
 }
 
