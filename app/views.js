@@ -45,7 +45,8 @@ function Views() {
             "<div class = 'ui-block-a' > Nombre </div><div class='ui-block-b'>Cant.</div > <div class = 'ui-block-c' > Precio </div><div class='ui-block-d'>SubTotal</div >" +
             "<div class = 'ui-block-e' > Borrar </div>" +
             "{{#items}}{{>items}}{{/items}}" +
-            "<div class='ui-block-a'> </div><div class='ui-block-b'>TOTAL</div><div class='ui-block-c'></div><div class='ui-block-d'>{{sumtotal}}</div><div class='ui-block-e'></div></div></div>";
+            "<div class='ui-block-a'> </div><div class='ui-block-b'>TOTAL</div><div class='ui-block-c'></div><div class='ui-block-d'>{{sumtotal}}</div><div class='ui-block-e'></div></div></div>" +
+            "<a href='#' data-role='button' class = 'sendorder boton' > Enviar Pedido </a>";
     this.cart_item = {items: "<div class='ui-block-a'>{{name}}</div><div class='ui-block-b'>{{qnty}}</div><div class='ui-block-c'>{{price}}</div><div class='ui-block-d'>{{total}}</div><div class='ui-block-e'><a href='#' data-icon='delete' data-iconpos='notext' data-itemid='{{id}}' data-mini='true' class='delitemcart boton'>Borrar</a></div>"};
 }
 

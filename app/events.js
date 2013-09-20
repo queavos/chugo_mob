@@ -92,8 +92,8 @@ function initBinding() {
             }
             if (pedido.venue == 0)
             {
-                pedido.lat = plat;
-                pedido.lng = plng;
+                pedido.lat = lat;
+                pedido.lng = lng;
                 pedido.venue = last_item['venue_id'];
                 pedido.userid = 0;
             }
@@ -123,7 +123,11 @@ el monto total de su Compra es " + pedido.sumtotal);
             console.log(pedido);
         }
     });
+    $(".sendorder").click(function(event) {
 
+        postPedido();
+        event.preventDefault();
+    });
     /*  Link to Carte    */
 
     /*  Link to Item of Carte    */

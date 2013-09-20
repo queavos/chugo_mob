@@ -59,8 +59,21 @@ function getItem(id) {
         success: function(data) {
             last_item = data['result'][0];
             showItem(data);
-
-            //console.log(last_item);
+        }
+    });
+}
+function postPedido() {
+    var datos = JSON.stringify(pedido);
+    url = dir_remota + "api/v1/order";
+    var lista = [];
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(pedido),
+        url: url,
+        crossdomain: true,
+        success: function(data) {
+            //last_item = data['result'][0];
+            //showItem(data);
         }
     });
 }
