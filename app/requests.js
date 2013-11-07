@@ -89,15 +89,29 @@ function postRegister() {
         data: JSON.stringify(newuser),
         url: url,
         crossdomain: true,
-        success: function(data, request) {
-            // alert(request.getResponseHeader('estado'));
-            // console.log ()
-            //showItem(data);
+        complete: function(jqXHR, textStatus) {
+            showValMobile();
         }
     });
 }
-function getValMobile(id) {
-    url = dir_remota + "api/v1/validate/" + id + "/carte";
+function getValMobile() {
+    url = dir_remota + "api/v1/validate/" + newuser.mobile + "/" + $('#codeval').val();
+    var lista = [];
+    $.ajax({
+        async: false,
+        data: "",
+        url: url,
+        crossdomain: true,
+        complete: function(data) {
+            //alert(textStatus);
+            getUser();
+        }
+    }
+    );
+}
+function getUser() {
+
+    url = dir_remota + "api/v1/user/" + curruser.username;
     var lista = [];
     $.ajax({
         async: false,
@@ -106,8 +120,10 @@ function getValMobile(id) {
         url: url,
         crossdomain: true,
         success: function(data) {
-            showCarte(data);
+            curruser.id = data.result[0].id;
+            curruser.username = data.result[0].username;
+            curruser.mobile = data.result[0].mobile;
+            showHome();
         }
-    }
-    );
+    });
 }

@@ -4,10 +4,9 @@
  */
 function showHome() {
     $.mobile.loading('show', {theme: 'a'});
-    $.mobile.changePage("#venues", {transition: "none"});
+    $.mobile.changePage("#index", {transition: "none"});
     salida = "<h3>Bienvenido</h3>";
     salida = salida + "<a data-href='venues' href = '#' class = 'linktovenues' data-role='button' > Buscar </a> ";
-    salida = salida + "<a href='map.html' > Map </a>";
     //console.log(salida);
     $('#homecontent').html(salida);
     $.mobile.loading('hide');
@@ -111,8 +110,8 @@ function showValMobile() {
     $.mobile.changePage("#valmobile", {transition: "none"});
     salida = '';
     views = new Views();
-    salida = Mustache.to_html(views.cartsended, pedido);
-    $('#contentsended').html(salida);
+    salida = Mustache.to_html(views.valmobile, newuser);
+    $('#validmsgtext').html(salida);
     initBinding();
     $.mobile.loading('hide');
 }

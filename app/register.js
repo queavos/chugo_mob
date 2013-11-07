@@ -20,6 +20,6 @@ function usuario()
 {
     this.id = 0;
     this.username = "";
-    this.password = "";
+    this.mobile = "";
 }
 

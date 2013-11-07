@@ -149,11 +149,23 @@ el monto total de su Compra es " + pedido.sumtotal);
         newuser.password = $("#password").val();
         newuser.password_confirmation = $("#password_confimation").val();
         newuser.mobile = $("#mobile").val();
+        curruser.username = newuser.username;
         //postPedido();
         postRegister();
         //showSendedCart();
         event.preventDefault();
     });
+    $(".valmobbtn").click(function(event) {
+
+        //postPedido();
+        //$.mobile.changePage("#sendcart", {transition: "none"});
+        //showSendCart();
+        getValMobile();
+        getUser();
+        event.preventDefault();
+    });
+
+
     /*  Link to Carte    */
 
     /*  Link to Item of Carte    */
