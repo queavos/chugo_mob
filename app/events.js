@@ -95,7 +95,9 @@ function initBinding() {
                 pedido.lat = lat;
                 pedido.lng = lng;
                 pedido.venue = last_item['venue_id'];
-                pedido.userid = 0;
+                pedido.shipping = locenvio;
+                pedido.venue_name = locact_name;
+                pedido.userid = userid;
             }
             //alert("llego a check");
             var check = pedido.findItem(last_item['id'])
@@ -125,7 +127,31 @@ el monto total de su Compra es " + pedido.sumtotal);
     });
     $(".sendorder").click(function(event) {
 
+        //postPedido();
+        //$.mobile.changePage("#sendcart", {transition: "none"});
+        showSendCart();
+        event.preventDefault();
+    });
+
+    $(".confsend").click(function(event) {
+
+        pedido.address = $("#dirconf").val();
         postPedido();
+        //$.mobile.changePage("#cartsended", {transition: "none"});
+        showSendedCart();
+        event.preventDefault();
+    });
+
+    $(".registerbtn").click(function(event) {
+
+        newuser.email = $("#email").val();
+        newuser.username = $("#username").val();
+        newuser.password = $("#password").val();
+        newuser.password_confirmation = $("#password_confimation").val();
+        newuser.mobile = $("#mobile").val();
+        //postPedido();
+        postRegister();
+        //showSendedCart();
         event.preventDefault();
     });
     /*  Link to Carte    */

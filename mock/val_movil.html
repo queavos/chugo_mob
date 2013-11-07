@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Main</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/chugo2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/myapp.css" rel="stylesheet" type="text/css">
+        <!-- jQuery and jQuery Mobile -->
+        <script src="libs/jq/jquery-1.10.2.min.js"></script>
+        <script src="libs/jqm/jquery.mobile-1.3.2.min.js"></script>
+        <script src="libs/jqmap/jquery.ui.map.full.min.js"></script>
+        <script src="libs/mustache/mustache.js"></script>
+
+        <script src="libs/json/json2.js"></script>
+
+        <!-- App Includes -->
+        <script src="app/conf.js"></script>
+        <script src="app/cart.js"></script>
+        <script src="app/myapp.js"></script>
+        <script src="app/views.js"></script>
+        <script src="app/requests.js"></script>
+        <script src="app/shows.js"></script>
+        <script src="app/events.js"></script>
+
+
+    </head>
+    <body>
+<div data-role="page" id="page1">
+    <div data-theme="a" data-role="header" data-position="fixed">
+        <h2>
+            Chugo
+        </h2>
+    </div>
+    <div data-role="content">
+        <h2>
+            Registro Exitoso
+        </h2>
+        <p>
+            El registro se realizo con exito, solo es necesario validar su número
+            de telefono movil. Con este fin se le envio una clave de validaciíon por
+        mensaje de texto (SMS) al número 0985624732. Ingreselo para finalizar el proceso de registro </p>
+        <div>
+            <a href="" data-transition="fade" data-theme="c">
+                Cambiar Numero de Movil
+            </a>
+        </div>
+        <div>
+            <a href="" data-transition="fade">
+                Re enviar codigo
+            </a>
+        </div>
+        <div data-role="fieldcontain">
+            <label for="textinput6">
+                Ingrese el Codigo de Validacion
+            </label>
+            <input name="" id="textinput6" placeholder="" value="" type="text">
+        </div>
+        <input value="Enviar" type="submit">
+    </div>
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <span class="ui-title">
+        </span>
+    </div>
+</div>
+    </body>
+</html>

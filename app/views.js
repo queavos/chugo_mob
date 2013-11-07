@@ -48,5 +48,20 @@ function Views() {
             "<div class='ui-block-a'> </div><div class='ui-block-b'>TOTAL</div><div class='ui-block-c'></div><div class='ui-block-d'>{{sumtotal}}</div><div class='ui-block-e'></div></div></div>" +
             "<a href='#' data-role='button' class = 'sendorder boton' > Enviar Pedido </a>";
     this.cart_item = {items: "<div class='ui-block-a'>{{name}}</div><div class='ui-block-b'>{{qnty}}</div><div class='ui-block-c'>{{price}}</div><div class='ui-block-d'>{{total}}</div><div class='ui-block-e'><a href='#' data-icon='delete' data-iconpos='notext' data-itemid='{{id}}' data-mini='true' class='delitemcart boton'>Borrar</a></div>"};
+
+    this.cartconf = "<div class='ui-grid-d'>" +
+            "<div class = 'ui-block-a' > Nombre </div> <div class = 'ui-block-b' > Precio </div> " +
+            "{{#items}}{{>items}}{{/items}}" +
+            "<div class='ui-block-a'>Envio </div><div class='ui-block-b'>{{shipping}}</div>" +
+            "<div class = 'ui-block-a' > Total con Envio </div><div class='ui-block-b'>{{sumtotalws}}</div >"
+            +
+            "<div class = 'ui-block-e' > </div></div> </div>"
+            +
+            "<label for='textarea'>Dirección (Aclarar):</label><br><textarea cols='40' rows='8' name='textarea' id='dirconf'></textarea>"
+            +
+            "<a href='#' data-role='button' class = 'confsend boton' > Confirmar Envio </a>";
+    this.cartconf_item = {items: "<div class='ui-block-a'>{{name}}</div><div class = 'ui-block-b' > {{total}} </div>"};
+
+    this.cartsended = "<p>Su pedido fue recibido por nuestro servicio, recibira un SMS informando si  <strong>{{venue_name}}</strong> acepto o rechazo su pedido. Si no recibe el mensaje en 20 minutos su pedido caducara. <strong>Muchas Gracias!!! </strong></p>";
 }
 

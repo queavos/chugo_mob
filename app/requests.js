@@ -21,6 +21,7 @@ function getVenues() {
 function getVenue(id) {
 
     url = dir_remota + "api/v1/venue/" + id;
+    locact = id;
     var lista = [];
     $.ajax({
         async: false,
@@ -29,6 +30,8 @@ function getVenue(id) {
         url: url,
         crossdomain: true,
         success: function(data) {
+            locact_name = data.result[0].nombre;
+            //alert(locact_name);
             showVenue(data);
         }
     });
@@ -76,4 +79,35 @@ function postPedido() {
             //showItem(data);
         }
     });
+}
+function postRegister() {
+    var datos = JSON.stringify(pedido);
+    url = dir_remota + "api/v1/register";
+    var lista = [];
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(newuser),
+        url: url,
+        crossdomain: true,
+        success: function(data, request) {
+            // alert(request.getResponseHeader('estado'));
+            // console.log ()
+            //showItem(data);
+        }
+    });
+}
+function getValMobile(id) {
+    url = dir_remota + "api/v1/validate/" + id + "/carte";
+    var lista = [];
+    $.ajax({
+        async: false,
+        dataType: "jsonp",
+        data: "",
+        url: url,
+        crossdomain: true,
+        success: function(data) {
+            showCarte(data);
+        }
+    }
+    );
 }

@@ -5,6 +5,8 @@
 function Cart()
 {
     this.venue = 0;
+    this.venue_name = "";
+    this.shipping = 0;
     this.lat = 0;
     this.lng = 0;
     this.address = "";
@@ -12,6 +14,7 @@ function Cart()
     this.userid = 0;
     this.items = [];
     this.sumtotal = 0;
+    this.sumtotalws = 0;
     this.nextid = 0;
     this.date = new Date();
     this.addItem = function(litem, qnty)
@@ -61,6 +64,7 @@ function Cart()
     this.touch = function() {
         this.date = new Date();
         this.sumtotal = this.total();
+        this.sumtotalws = this.sumtotal + this.shipping;
     };
 }
 

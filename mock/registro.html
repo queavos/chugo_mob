@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Main</title>
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <link href="css/jquery.mobile-1.3.2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/jquery.mobile.structure-1.3.2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/chugo2.min.css" rel="stylesheet" type="text/css">
+        <link href="css/myapp.css" rel="stylesheet" type="text/css">
+        <!-- jQuery and jQuery Mobile -->
+        <script src="libs/jq/jquery-1.10.2.min.js"></script>
+        <script src="libs/jqm/jquery.mobile-1.3.2.min.js"></script>
+        <script src="libs/jqmap/jquery.ui.map.full.min.js"></script>
+        <script src="libs/mustache/mustache.js"></script>
+
+        <script src="libs/json/json2.js"></script>
+
+        <!-- App Includes -->
+        <script src="app/conf.js"></script>
+        <script src="app/cart.js"></script>
+        <script src="app/myapp.js"></script>
+        <script src="app/views.js"></script>
+        <script src="app/requests.js"></script>
+        <script src="app/shows.js"></script>
+        <script src="app/events.js"></script>
+
+
+    </head>
+    <body>
+        <!-- REGISTER -->
+        <div data-role="page" id="register">
+            <div data-theme="a" data-role="header" data-position="fixed">
+                <h2>
+                    Chugo
+                </h2>
+            </div>
+            <div data-role="content">
+                <h2>
+                    Registro de Usuario
+                </h2>
+                <form action="">
+                    <div data-role="fieldcontain">
+                        <label for="textinput5">
+                            Correo Electronico
+                        </label>
+                        <input name="" id="email" placeholder="usuario@servidor.com" value=""
+                               type="text">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput1">
+                            Usuario
+                        </label>
+                        <input name="" id="username" placeholder="Nombre de usuario" value=""
+                               type="text">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput2">
+                            Password
+                        </label>
+                        <input name="" id="password" placeholder="Contraseña" value="" type="text">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput3">
+                            Password Confirmar
+                        </label>
+                        <input name="" id="password_confimation" placeholder="Contraseña" value="" type="text">
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="textinput4">
+                            Numero de Celular (Sin el 0)
+                        </label>
+                        <input name="" id="mobile" placeholder="9xx123456" value="" type="text">
+                    </div>
+                    <input value="Registrarse" type="submit">
+                    <a data-role="button" data-rel="back" href="#page1">
+                        Cancelar
+                    </a>
+                </form>
+            </div>
+            <div data-theme="a" data-role="footer" data-position="fixed">
+                <span class="ui-title">
+                </span>
+            </div>
+        </div>
+    </body>
+</html>

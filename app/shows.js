@@ -73,7 +73,6 @@ function showAddItem() {
     //console.log(last_item);
     $('#contentaddcart').html(salida);
     initBinding();
-    //$('.cartelist').listview();
     $("#txtqnty").val(1);
     $.mobile.loading('hide');
 }
@@ -83,11 +82,38 @@ function showCart() {
     salida = '';
     views = new Views();
     salida = Mustache.to_html(views.cart, pedido, views.cart_item);
-    //console.log(last_item);
     $('#contentcart').html(salida);
     initBinding();
-    //$('.cartelist').listview();
-    $("#txtqnty").val(1);
+    $.mobile.loading('hide');
+}
+function showSendCart() {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#sendcart", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.cartconf, pedido, views.cartconf_item);
+    $('#contentconf').html(salida);
+    initBinding();
+    $.mobile.loading('hide');
+}
+function showSendedCart() {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#cartsended", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.cartsended, pedido);
+    $('#contentsended').html(salida);
+    initBinding();
+    $.mobile.loading('hide');
+}
+function showValMobile() {
+    $.mobile.loading('show', {theme: 'a'});
+    $.mobile.changePage("#valmobile", {transition: "none"});
+    salida = '';
+    views = new Views();
+    salida = Mustache.to_html(views.cartsended, pedido);
+    $('#contentsended').html(salida);
+    initBinding();
     $.mobile.loading('hide');
 }
 
