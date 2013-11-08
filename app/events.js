@@ -97,7 +97,7 @@ function initBinding() {
                 pedido.venue = last_item['venue_id'];
                 pedido.shipping = locenvio;
                 pedido.venue_name = locact_name;
-                pedido.userid = userid;
+                pedido.userid = curruser.id;
             }
             //alert("llego a check");
             var check = pedido.findItem(last_item['id'])
@@ -164,7 +164,21 @@ el monto total de su Compra es " + pedido.sumtotal);
         getUser();
         event.preventDefault();
     });
+    $(".loginbtn").click(function(event) {
 
+        //postPedido();
+        //$.mobile.changePage("#sendcart", {transition: "none"});
+        //showSendCart();
+        //getValMobile();
+        //getUser();
+        login.username = $('#usernamelog').val();
+        login.password = $('#passwordlog').val();
+        curruser.username = login.username;
+        postLogin();
+        getUser();
+        //getAuth();
+        event.preventDefault();
+    });
 
     /*  Link to Carte    */
 

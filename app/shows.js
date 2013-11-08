@@ -87,21 +87,21 @@ function showCart() {
 }
 function showSendCart() {
     $.mobile.loading('show', {theme: 'a'});
-    $.mobile.changePage("#sendcart", {transition: "none"});
+    $.mobile.changePage("#sendconfirm", {transition: "none"});
     salida = '';
     views = new Views();
     salida = Mustache.to_html(views.cartconf, pedido, views.cartconf_item);
-    $('#contentconf').html(salida);
+    $('#contentconfirm').html(salida);
     initBinding();
     $.mobile.loading('hide');
 }
 function showSendedCart() {
     $.mobile.loading('show', {theme: 'a'});
-    $.mobile.changePage("#cartsended", {transition: "none"});
+    $.mobile.changePage("#cartsendedpage", {transition: "none"});
     salida = '';
     views = new Views();
     salida = Mustache.to_html(views.cartsended, pedido);
-    $('#contentsended').html(salida);
+    $('#contentsendedmsg').html(salida);
     initBinding();
     $.mobile.loading('hide');
 }

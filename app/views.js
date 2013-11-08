@@ -49,13 +49,13 @@ function Views() {
             "<a href='#' data-role='button' class = 'sendorder boton' > Enviar Pedido </a>";
     this.cart_item = {items: "<div class='ui-block-a'>{{name}}</div><div class='ui-block-b'>{{qnty}}</div><div class='ui-block-c'>{{price}}</div><div class='ui-block-d'>{{total}}</div><div class='ui-block-e'><a href='#' data-icon='delete' data-iconpos='notext' data-itemid='{{id}}' data-mini='true' class='delitemcart boton'>Borrar</a></div>"};
 
-    this.cartconf = "<div class='ui-grid-a'>" +
+    this.cartconf = "<div class='ui-grid-d'>" +
             "<div class = 'ui-block-a' > Nombre </div> <div class = 'ui-block-b' > Precio </div> " +
             "{{#items}}{{>items}}{{/items}}" +
             "<div class='ui-block-a'>Envio </div><div class='ui-block-b'>{{shipping}}</div>" +
             "<div class = 'ui-block-a' > Total con Envio </div><div class='ui-block-b'>{{sumtotalws}}</div >"
             +
-            "</div> </div>"
+            "<div class = 'ui-block-e' > </div></div> </div>"
             +
             "<label for='textarea'>Dirección (Aclarar):</label><br><textarea cols='40' rows='8' name='textarea' id='dirconf'></textarea>"
             +

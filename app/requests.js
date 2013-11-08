@@ -127,3 +127,36 @@ function getUser() {
         }
     });
 }
+function postLogin() {
+    var datos = JSON.stringify(login);
+    url = dir_remota + "api/v1/login";
+    var lista = [];
+    $.ajax({
+        type: "POST",
+        data: JSON.stringify(login),
+        url: url,
+        crossdomain: true,
+        success: function(data) {
+            getUser();
+        }
+    }
+    );
+}
+function getAuth() {
+
+    url = dir_remota + "api/v1/test/";
+    var lista = [];
+    $.ajax({
+        async: false,
+        dataType: "jsonp",
+        data: "",
+        url: url,
+        crossdomain: true,
+        success: function(data) {
+            curruser.id = data.result[0].id;
+            curruser.username = data.result[0].username;
+            curruser.mobile = data.result[0].mobile;
+            showHome();
+        }
+    });
+}
